@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      17 字
+      151 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -232,7 +232,7 @@
             <div class="markdown-body">
               <h2 id="快排的思想"><a href="#快排的思想" class="headerlink" title="快排的思想"></a>快排的思想</h2><blockquote>
 </blockquote>
-<h3 id="快排模板"><a href="#快排模板" class="headerlink" title="快排模板"></a>快排模板</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><br></code></pre></td></tr></table></figure>
+<h3 id="快排模板"><a href="#快排模板" class="headerlink" title="快排模板"></a>快排模板</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-comment">// 递归出口：子数组无元素或只剩一个元素</span><br>    <span class="hljs-keyword">if</span> (l &gt;= r)<br>        <span class="hljs-keyword">return</span>;<br>    <br>    <span class="hljs-comment">// 1、选取数组中存在的值作为分界值</span><br>    <span class="hljs-keyword">int</span> x = nums[l + (r - l) / <span class="hljs-number">2</span>];<br><br>    <span class="hljs-comment">// 2、保证 &lt;= x 的都在左边， &gt;= x 的都在右边</span><br>    <span class="hljs-keyword">int</span> i = l - <span class="hljs-number">1</span>, j = r + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>        <span class="hljs-keyword">do</span> i++; <span class="hljs-keyword">while</span> (nums[i] &lt; x);<br>        <span class="hljs-keyword">do</span> j--; <span class="hljs-keyword">while</span> (nums[j] &gt; x);<br><br>        <span class="hljs-keyword">if</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">int</span> t = nums[i];<br>            nums[i] = nums[j];<br>            nums[j] = t;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 3、递归处理左右子数组</span><br>    quick_sort(nums, l, j);<br>    quick_sort(nums, j + <span class="hljs-number">1</span>, r);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="寻找第k大的数"><a href="#寻找第k大的数" class="headerlink" title="寻找第k大的数"></a>寻找第k大的数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><br></code></pre></td></tr></table></figure>
             </div>
