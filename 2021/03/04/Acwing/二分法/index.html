@@ -20,7 +20,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>快速排序 - Hexo</title>
+  <title>二分法 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="快速排序">
+            <span class="h2" id="subtitle" title="二分法">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-04 16:23" pubdate>
-        2021年3月4日 下午
+      <time datetime="2021-03-04 18:35" pubdate>
+        2021年3月4日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      475 字
+      450 字
     </span>
   
 
@@ -227,20 +227,21 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">快速排序</h1>
+            <h1 style="display: none">二分法</h1>
             
             <div class="markdown-body">
-              <h2 id="快排的思想"><a href="#快排的思想" class="headerlink" title="快排的思想"></a>快排的思想</h2><blockquote>
-<p>快速排序是基于 <strong>分治</strong> 和 <strong>递归</strong> 的思想。</p>
+              <h2 id="二分法思想"><a href="#二分法思想" class="headerlink" title="二分法思想"></a>二分法思想</h2><blockquote>
+<p>二分法常用于有序状态的数组中，通过中点值与条件的比较一下筛选掉一半的处理规模，从而使时间复杂度从O(N)降到O(logN)</p>
+</blockquote>
+<blockquote>
 <ul>
-<li>选取分界点x。</li>
-<li>双指针处理，使得 &lt;= x 的都在左边， &gt;= x 的都在右边。</li>
-<li>递归排序左右子数组, 递归出口为子数组无元素或只有一个元素。</li>
+<li>整数二分</li>
+<li>小数二分</li>
 </ul>
 </blockquote>
-<h3 id="Acwing785-快排模板"><a href="#Acwing785-快排模板" class="headerlink" title="Acwing785_快排模板"></a>Acwing785_快排模板</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    时间复杂度: O(N ^ logN)</span><br><span class="hljs-comment">    空间复杂度: O(N)</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-comment">// 递归出口：子数组无元素或只剩一个元素</span><br>    <span class="hljs-keyword">if</span> (l &gt;= r)<br>        <span class="hljs-keyword">return</span>;<br>    <br>    <span class="hljs-comment">// 1、选取数组中存在的值作为分界值</span><br>    <span class="hljs-keyword">int</span> x = nums[l + (r - l) / <span class="hljs-number">2</span>];<br><br>    <span class="hljs-comment">// 2、保证 &lt;= x 的都在左边， &gt;= x 的都在右边</span><br>    <span class="hljs-keyword">int</span> i = l - <span class="hljs-number">1</span>, j = r + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>        <span class="hljs-keyword">do</span> i++; <span class="hljs-keyword">while</span> (nums[i] &lt; x);<br>        <span class="hljs-keyword">do</span> j--; <span class="hljs-keyword">while</span> (nums[j] &gt; x);<br><br>        <span class="hljs-keyword">if</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">int</span> t = nums[i];<br>            nums[i] = nums[j];<br>            nums[j] = t;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 3、递归处理左右子数组</span><br>    quick_sort(nums, l, j);<br>    quick_sort(nums, j + <span class="hljs-number">1</span>, r);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="Acwing789-数的范围"><a href="#Acwing789-数的范围" class="headerlink" title="Acwing789_数的范围"></a>Acwing789_数的范围</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    元素k的起始位置和终止位置，没找到则返回[-1, -1]</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    1、寻找 &gt;= k 的左边界l和 &lt;= k 的右边界r</span><br><span class="hljs-comment">    2、如果边界处的值不等于k, 则说明k不存在</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] num_score(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> k) &#123;<br>    <br>    <span class="hljs-comment">// 寻找 &gt;= k 的左边界</span><br>    <span class="hljs-keyword">int</span> l1 = <span class="hljs-number">0</span>, r1 = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (l1 &lt; r1) &#123;<br>        <span class="hljs-keyword">int</span> mid1 = (l1 + r1) / <span class="hljs-number">2</span>;<br>        <span class="hljs-comment">// 如果中点处的值 &gt;= k, 则缩小右边界的范围，因为[mid1, r1]肯定都 &gt;= k</span><br>        <span class="hljs-keyword">if</span> (nums[mid1] &gt;= k)<br>            r1 = mid1;<br>        <span class="hljs-comment">// 否则说明[l1, mid1]都 &lt; k, 那么 &gt;= k的左边界只可能在[mid1 + 1, r1]之间</span><br>        <span class="hljs-keyword">else</span><br>            l1 = mid1 + <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 如果边界处的值不等于k则说明元素不存在</span><br>    <span class="hljs-keyword">if</span> (nums[l1] != k)  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>&#125;;<br><br>    <span class="hljs-comment">// 寻找 &lt;= k 的右边界</span><br>    <span class="hljs-keyword">int</span> l2 = <span class="hljs-number">0</span>, r2 = nums.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (l2 &lt; r2) &#123;<br>        <span class="hljs-comment">// 如果是使得l = mid, 则应该 + 1</span><br>        <span class="hljs-keyword">int</span> mid2 = (l2 + r2 + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br><br>        <span class="hljs-comment">// 如果中点处的值 &lt;= k, 则缩小右边界的范围，因为[l2, mid2]肯定都 &lt;= k</span><br>        <span class="hljs-keyword">if</span> (nums[mid2] &lt;= k)<br>            l2 = mid1;<br>        <span class="hljs-comment">// 否则说明[mid2, r2]都 &gt; k, 那么 &gt;= k的左边界只可能在[l2, mid2 - 1]之间</span><br>        <span class="hljs-keyword">else</span><br>            l2 = mid2 - <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;l1, l2&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="Acwing786-寻找第k小的数"><a href="#Acwing786-寻找第k小的数" class="headerlink" title="Acwing786_寻找第k小的数"></a>Acwing786_寻找第k小的数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    基于快排的思想将小的数放在数组右边，大的数放在数组左边</span><br><span class="hljs-comment">    </span><br><span class="hljs-comment">    当右子数组长度 len &gt;= k时，说明第k大的数是右数组的第k大的数</span><br><span class="hljs-comment">    当右子数组长度 len &lt; k时, 说明第k大的数是左数组的第(k - len)大的数</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    递归的向相应的子数组中寻找，直到数组中只剩下一个元素则为目标值</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    时间复杂度: O(N)</span><br><span class="hljs-comment">    空间复杂度: O(N)</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findKth</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>    <span class="hljs-comment">// 当只剩下一个数的时候，说明找到了第K小的数</span><br>    <span class="hljs-keyword">if</span> (l == r)<br>        <span class="hljs-keyword">return</span> arr[l];<br>    <br>    <span class="hljs-keyword">int</span> i = l - <span class="hljs-number">1</span>, j = r + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> target = arr[(l + r) / <span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>        <span class="hljs-keyword">do</span> i++; <span class="hljs-keyword">while</span> (arr[i] &lt; target);<br>        <span class="hljs-keyword">do</span> j--; <span class="hljs-keyword">while</span> (arr[j] &gt; target);<br>        <span class="hljs-keyword">if</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">int</span> temp = arr[i];<br>            arr[i] = arr[j];<br>            arr[j] = temp;<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-keyword">int</span> len = j - l + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (len &gt;= k)<br>        <span class="hljs-keyword">return</span> findKth(arr, l, j, k);<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> findKth(arr, j + <span class="hljs-number">1</span>, r, k - len);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="Acwing790-数的三次方根"><a href="#Acwing790-数的三次方根" class="headerlink" title="Acwing790_数的三次方根"></a>Acwing790_数的三次方根</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    计算数的三次方根</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">three_sqrt</span><span class="hljs-params">(<span class="hljs-keyword">double</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">double</span> l = -<span class="hljs-number">100</span>, r = <span class="hljs-number">100</span>;<br>    <span class="hljs-comment">// 通过精度来控制循环, 一半比要求的精度低两个数量级</span><br>    <span class="hljs-keyword">while</span> (r - l &gt; <span class="hljs-number">1e-8</span>) &#123;<br>        <span class="hljs-keyword">double</span> mid = (r + l) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">double</span> t = mid * mid * mid;<br>        <span class="hljs-keyword">if</span> (t &lt; target)<br>            l = mid;<br>        <span class="hljs-keyword">else</span><br>            r = mid;<br>    &#125;<br>    <br>    System.out.printf(<span class="hljs-string">&quot;%.6f&quot;</span>, r);<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -251,7 +252,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Acwing/">Acwing</a>
                     
-                      <a class="hover-with-bg" href="/categories/Acwing/%E6%8E%92%E5%BA%8F/">排序</a>
+                      <a class="hover-with-bg" href="/categories/Acwing/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
                     
                   </div>
                 
@@ -259,7 +260,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
                     
                   </div>
                 
@@ -276,15 +277,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/04/Acwing/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
+                      <a href="/2021/03/04/Acwing/%E9%AB%98%E7%B2%BE%E5%BA%A6/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">归并排序</span>
+                        <span class="hidden-mobile">高精度</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/03/04/Acwing/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
+                        <span class="hidden-mobile">归并排序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
