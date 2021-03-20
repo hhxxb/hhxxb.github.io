@@ -184,6 +184,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/03/19/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E5%9F%BA%E7%A1%80/">面试题之Java基础</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/19/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E5%9F%BA%E7%A1%80/">
+          
+          
+            
+          
+          StringBuilder 和 StringBuffer 的异同点12相同点：底层都是char数组不同点：前者是线程不安全的，后者是线程安全的(通过Synchronized修饰)
+
+Java数组对象的内存分配123基础类型的数组，分配在栈内存中，是连续分配的。对象数组，对象引用连续分配在栈内存中。实际对象分配在堆内存，不是连续分配的;
+
+创建对象的方式有哪些？1234(1) new(2) clon
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-19 22:22" pubdate>
+              2021-03-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+            
+              <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/Java/">Java</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+            
+              <a href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">
+          
+          
+            
+          
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970// 堆是一个完全二叉树// 核心操作：down(int x) 和 up(int x)// 如果是从下标0开始，则父亲下标为(x - 1)
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-19 18:47" pubdate>
+              2021-03-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A0%86/">堆</a>
+            
+              <a href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/03/18/Acwing/%E5%B9%B6%E6%9F%A5%E9%9B%86/">并查集[Acwing]</a>
       </h1>
 
@@ -591,115 +699,6 @@ Redis是基于内存的K-V存储系统，其中 key 类型一般为字符串，�
               <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">前缀和</a>
             
               <a href="/tags/%E5%B7%AE%E5%88%86/">差分</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/04/Acwing/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/04/Acwing/%E9%AB%98%E7%B2%BE%E5%BA%A6/">
-          
-          
-            
-          
-          Acwing791_高精度加法1234567891011121314151617181920public String add(String a, String b) &#123;    // 将两个大数字符串翻转    a = new StringBuilder(a).reverse().toString();    b = new StringBuilder(b).reverse().toSt
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-04 18:51" pubdate>
-              2021-03-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Acwing/">Acwing</a>
-            
-              <a href="/categories/Acwing/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/04/Acwing/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/04/Acwing/%E4%BA%8C%E5%88%86%E6%B3%95/">
-          
-          
-            
-          
-          二分法思想
-二分法常用于有序状态的数组中，通过中点值与条件的比较一下筛选掉一半的处理规模，从而使时间复杂度从O(N)降到O(logN)
-
-
-
-整数二分
-小数二分
-
-
-Acwing789_数的范围123456789101112131415161718192021222324252627282930313233343536373839/*    元素k的起始位置和终止位置，没找到则返回[-1, -1]
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-04 18:35" pubdate>
-              2021-03-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Acwing/">Acwing</a>
-            
-              <a href="/categories/Acwing/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
             
           </div>
         

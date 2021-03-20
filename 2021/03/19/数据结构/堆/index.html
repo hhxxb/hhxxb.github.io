@@ -20,7 +20,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>面试题之操作系统 - Hexo</title>
+  <title>堆 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="面试题之操作系统">
+            <span class="h2" id="subtitle" title="堆">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-15 16:18" pubdate>
-        2021年3月15日 下午
+      <time datetime="2021-03-19 18:47" pubdate>
+        2021年3月19日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      572 字
+      456 字
     </span>
   
 
@@ -227,20 +227,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">面试题之操作系统</h1>
+            <h1 style="display: none">堆</h1>
             
             <div class="markdown-body">
-              <h3 id="进程与线程的区别"><a href="#进程与线程的区别" class="headerlink" title="进程与线程的区别"></a>进程与线程的区别</h3><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gcode"><span class="hljs-number">1</span>、进程是资源分配的最小单位；线程是任务执行<span class="hljs-comment">(资源调度)</span>的最小单位。<br><br><span class="hljs-number">2</span>、进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间，建立数据表来维护代码段、堆栈段和数据段，这种操作非常昂贵；多个线程共享进程的地址空间和数据，因此线程的维护和切换代价比进程要低很多。<br><br><span class="hljs-number">3</span>、进程之间的需要以IPC的方式进行通信；线程由于共享进程的全局变量和静态变量，因此通信更为方便。<br></code></pre></td></tr></table></figure>
-
-<h3 id="进程调度算法有哪些？"><a href="#进程调度算法有哪些？" class="headerlink" title="进程调度算法有哪些？"></a>进程调度算法有哪些？</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss">(<span class="hljs-number">1</span>) 先来先服务<br>(<span class="hljs-number">2</span>) 时间片轮转<br>(<span class="hljs-number">3</span>) 短作业优先<br>(<span class="hljs-number">4</span>) 优先级调度<br>(<span class="hljs-number">5</span>) 多级反馈队列 <span class="hljs-selector-attr">[详细了解]</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="5种IO模型"><a href="#5种IO模型" class="headerlink" title="5种IO模型"></a>5种IO模型</h3><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs gcode">同步 <span class="hljs-attr">vs 异步</span><br><span class="hljs-attr">阻塞 vs 非阻塞</span><br><span class="hljs-attr"></span><br><span class="hljs-attr">(1</span>) 阻塞式IO<br>    <br><span class="hljs-comment">(2)</span> 非阻塞式IO<br>    <br><span class="hljs-comment">(3)</span> 多路复用IO<br><br><span class="hljs-comment">(4)</span> 信号驱动IO<br><br><span class="hljs-comment">(5)</span> 异步IO<br></code></pre></td></tr></table></figure>
-
-<h3 id="select、poll和epoll的区别"><a href="#select、poll和epoll的区别" class="headerlink" title="select、poll和epoll的区别"></a>select、poll和epoll的区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain"><br></code></pre></td></tr></table></figure>
-
-<h3 id="进程的通信方式有哪些？线程呢？"><a href="#进程的通信方式有哪些？线程呢？" class="headerlink" title="进程的通信方式有哪些？线程呢？"></a>进程的通信方式有哪些？线程呢？</h3><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs gcode">进程间的通信方式：<br>    <span class="hljs-comment">(1)</span> 匿名管道：<br>    <span class="hljs-comment">(2)</span> 管道<span class="hljs-comment">(有名管道)</span><br>    <span class="hljs-comment">(3)</span> 消息队列<br>    <span class="hljs-comment">(4)</span> 信号量<br>    <span class="hljs-comment">(5)</span> 共享内存<br>    <span class="hljs-comment">(7)</span> 套接字<br><br>线程间的通信方式：<br>    <span class="hljs-comment">(1)</span> 互斥量: 采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。<br>    <span class="hljs-comment">(2)</span> 信号量<br></code></pre></td></tr></table></figure>
-
-<h3 id="僵尸进程产生的原因和危害以及如何避免？"><a href="#僵尸进程产生的原因和危害以及如何避免？" class="headerlink" title="僵尸进程产生的原因和危害以及如何避免？"></a>僵尸进程产生的原因和危害以及如何避免？</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs perl">如果子进程先结束，父进程仍在继续运行并且没有调用<span class="hljs-keyword">wait</span>/<span class="hljs-keyword">waitpid</span>，那么子进程就会称为僵尸进程。<br><br>如果父进程先结束，那么子进程会被init进程接管，不会成为僵尸进程。<br><br>一个进程结束的时候，操作系统会释放掉其占用的一些资源，比如内存等。但是同时也会保留一些信息，比如进程号。系统的进程号是有上限的，如果存在大量的僵尸进程那么会造成无法创建新的进程。<br><br>(<span class="hljs-number">1</span>) 父进程调用<span class="hljs-keyword">wait</span> / <span class="hljs-keyword">waitpid</span><br>(<span class="hljs-number">2</span>) 杀死父进程。使得僵尸进程进化为孤儿进程(没有父进程的进程)，由init进程接管。<br></code></pre></td></tr></table></figure>
+              <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 堆是一个完全二叉树</span><br><span class="hljs-comment">// 核心操作：down(int x) 和 up(int x)</span><br><span class="hljs-comment">// 如果是从下标0开始，则父亲下标为(x - 1) / 2; 如果是从下标1开始，则父亲下标为 x / 2;</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Heap</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> List&lt;Integer&gt; data;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Heap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> size)</span> </span>&#123;<br>        data = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(size);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Heap</span><span class="hljs-params">()</span> </span>&#123;<br>        data = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Heap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> n = arr.length;<br>        data = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(n);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            data.add(arr[i]);<br>        <br>        <span class="hljs-comment">// 从最后一个叶子节点的父节点开始进行down, 即可O(N)实现堆化</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = (n - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--)<br>            down(i);<br>    &#125;<br><br>    <span class="hljs-comment">// 上浮操作 : 用于添加元素</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">up</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>&#123;<br>        <span class="hljs-comment">// 当不是根节点时，不断与其父节点进行比较。</span><br>        <span class="hljs-comment">// 如果比根节点更小，则进行交换。继续上浮</span><br>        <span class="hljs-keyword">while</span> (index &gt; <span class="hljs-number">0</span> &amp;&amp; data.get(index) &lt; data.get((index - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>)) &#123;<br>            Collections.swap(data, index, (index - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>);<br>            index = (index - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">down</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>&#123;<br>        <span class="hljs-comment">// 初始t为当前节点，代表值最小的位置</span><br>        <span class="hljs-keyword">int</span> t = index;<br>        <span class="hljs-comment">// 如果左孩子存在，当前最小节点则与左孩子进行比较。</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * index + <span class="hljs-number">1</span> &lt; data.size() &amp;&amp; data.get(<span class="hljs-number">2</span> * index + <span class="hljs-number">1</span>) &lt; data.get(t))<br>            t = <span class="hljs-number">2</span> * index + <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 如果右孩子存在，当前最小节点则与左孩子进行比较。</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * index + <span class="hljs-number">2</span> &lt; data.size() &amp;&amp; data.get(<span class="hljs-number">2</span> * index + <span class="hljs-number">2</span>) &lt; data.get(t))<br>            t = <span class="hljs-number">2</span> * index + <span class="hljs-number">2</span>;<br><br>        <span class="hljs-comment">// 如果当前节点不是最小节点，则进行交换。继续下沉。</span><br>        <span class="hljs-keyword">if</span> (t != index) &#123;<br>            Collections.swap(data, t, index);<br>            down(t);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span> </span>&#123;<br>        <span class="hljs-comment">// 末尾添加新元素，然后不断上浮</span><br>        data.add(v);<br>        up(data.size() - <span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-comment">// 提取堆顶元素</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getMax</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = data.get(<span class="hljs-number">0</span>);<br>        <span class="hljs-comment">// 末尾元素与堆顶元素交换，然后不断下沉</span><br>        Collections.swap(data, <span class="hljs-number">0</span>, data.size() - <span class="hljs-number">1</span>);<br>        data.remove(data.size() - <span class="hljs-number">1</span>);<br>        down(<span class="hljs-number">0</span>);<br><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -251,9 +241,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">堆</a>
                     
                   </div>
                 
@@ -261,9 +251,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
+                      <a class="hover-with-bg" href="/tags/%E5%A0%86/">堆</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
                     
                   </div>
                 
@@ -280,9 +270,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                      <a href="/2021/03/19/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E5%9F%BA%E7%A1%80/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">并查集</span>
+                        <span class="hidden-mobile">面试题之Java基础</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -290,8 +280,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/03/11/%E7%AE%97%E6%B3%95/%E8%AE%A1%E7%AE%97%E5%99%A8%E9%97%AE%E9%A2%98/">
-                        <span class="hidden-mobile">计算器问题</span>
+                      <a href="/2021/03/18/Acwing/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                        <span class="hidden-mobile">并查集[Acwing]</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
