@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      283 字
+      424 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      4
        分钟
     </span>
   
@@ -237,6 +237,12 @@
 <h3 id="创建对象的方式有哪些？"><a href="#创建对象的方式有哪些？" class="headerlink" title="创建对象的方式有哪些？"></a>创建对象的方式有哪些？</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scss">(<span class="hljs-number">1</span>) new<br>(<span class="hljs-number">2</span>) clone()<br>(<span class="hljs-number">3</span>) 反射<br>(<span class="hljs-number">4</span>) 序列化<br></code></pre></td></tr></table></figure>
 
 <h3 id="深拷贝-和-浅拷贝"><a href="#深拷贝-和-浅拷贝" class="headerlink" title="深拷贝 和 浅拷贝"></a>深拷贝 和 浅拷贝</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">浅拷贝：在堆内存中，将该对象复制了一份，也就是说产生了一个新的对象。<br><span class="hljs-code">       新对象的属性如果是基本类型，拷贝的就是基本类型的值；</span><br><span class="hljs-code">       如果属性是引用类型，拷贝的就是内存地址。</span><br><span class="hljs-code"></span><br><span class="hljs-code">深拷贝：在堆内存中，将该对象复制了一份，也就是说产生了一个新的对象。</span><br><span class="hljs-code">       在拷贝引用类型成员变量时，为引用类型的数据成员另辟了一个独立的内存空间，实现真正内容上的拷贝。</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="和-equals-的区别"><a href="#和-equals-的区别" class="headerlink" title="== 和 equals 的区别"></a>== 和 equals 的区别</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section">== 用来比较栈中的值是否相等。对于基础类型直接比较值，对于引用类型比较地址值。</span><br><br>equals 用来比较堆中对象的内容是否相等。<br><br>Object类中的equals()用的是 ==, 因此如果不重写equals()的话，相当于使用 ==。<br></code></pre></td></tr></table></figure>
+
+<h3 id="自动拆箱和自动装箱"><a href="#自动拆箱和自动装箱" class="headerlink" title="自动拆箱和自动装箱"></a>自动拆箱和自动装箱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">拆箱和装箱是指：基础类型和它们对应的包装类之间的转换。拆箱是把包装类型变成基本类型；装箱是把基本类型变成包装类型。<br></code></pre></td></tr></table></figure>
+
+
             </div>
             <hr>
             <div>
