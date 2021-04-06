@@ -184,18 +184,16 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0048_%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">LC0048_旋转图像</a>
+        <a href="/2021/03/06/%E7%AE%97%E6%B3%95/LC0300_%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/">LC300_最长上升子序列</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0048_%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">
+        <a href="/2021/03/06/%E7%AE%97%E6%B3%95/LC0300_%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/">
           
           
             
           
-          题目描述1给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。
-
-方法1：模拟12345678910111213141516171819202122232425262728293031323334/*    1、转置    2、交换列*/public void rotate(int[][] matrix) &#123;    if (matrix == n
+          朴素版123456789101112131415161718192021222324252627/*    算法思想：        dp[i]: 以下标i结尾的最长上升子序列的最大长度        从[0, i - 1]从查找，如果遇到 nums[j] &lt; nums[i], 则 dp[i] = Math.max(dp[i], dp[j] + 1);    时间复杂度: O(N ^ 2) 
         </a>
       </p>
 
@@ -203,170 +201,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 13:13" pubdate>
-              2021-03-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E6%A8%A1%E6%8B%9F/">模拟</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0047_%E5%85%A8%E6%8E%92%E5%88%97ii/">LC0047_全排列ii</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0047_%E5%85%A8%E6%8E%92%E5%88%97ii/">
-          
-          
-            
-          
-          方法1：回溯12345678910111213141516171819202122232425262728293031323334353637383940/*    全排列去重：        if (i &gt; 0 &amp;&amp; nums[i] == nums[i - 1] &amp;&amp; !used[i - 1])            continue;*/List&lt;L
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 13:12" pubdate>
-              2021-03-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%9B%9E%E6%BA%AF/">回溯</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%9B%9E%E6%BA%AF/">回溯</a>
-            
-              <a href="/tags/%E6%8E%92%E5%88%97/">排列</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0046_%E5%85%A8%E6%8E%92%E5%88%97/">LC0046_全排列</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0046_%E5%85%A8%E6%8E%92%E5%88%97/">
-          
-          
-            
-          
-          方法1：回溯1234567891011121314151617181920212223242526272829303132List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums) &#123;    int n = 
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 13:11" pubdate>
-              2021-03-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%9B%9E%E6%BA%AF/">回溯</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%9B%9E%E6%BA%AF/">回溯</a>
-            
-              <a href="/tags/%E6%8E%92%E5%88%97/">排列</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0045_%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8Fii/">LC0045_跳跃游戏ii</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0045_%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8Fii/">
-          
-          
-            
-          
-          题目描述12345678910给定一个非负整数数组，你最初位于数组的第一个位置。数组中的每个元素代表你在该位置可以跳跃的最大长度。你的目标是使用最少的跳跃次数到达数组的最后一个位置。示例:输入: [2,3,1,1,4]输出: 2
-
-方法1：动态规划1234567891011121314151617181920212223242526272829/*    dp[i]: 走到下标为i的点所需的最小步
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 12:56" pubdate>
-              2021-03-26
+            <time datetime="2021-03-06 23:58" pubdate>
+              2021-03-06
             </time>
           </div>
         
@@ -388,7 +224,7 @@
             
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
             
-              <a href="/tags/%E8%B4%AA%E5%BF%83/">贪心</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7DP/">线性DP</a>
             
           </div>
         
@@ -402,16 +238,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0043_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%B9%98/">LC0043_字符串相乘</a>
+        <a href="/2021/03/06/Redis/Redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Redis数据类型</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0043_%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%B9%98/">
+        <a href="/2021/03/06/Redis/Redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
           
           
             
           
-          方法1：大数乘法123456789101112131415161718192021222324252627282930313233/*    核心操作：c[i][j] += a[i] * b[j]*/public String multiply(String num1, String num2) &#123;    num1 = new StringBuilder(num1).reverse().
+          redisObject类型
+Redis是基于内存的K-V存储系统，其中 key 类型一般为字符串，而 value 类型则为 redis 对象(string, list, set…)
+
+1
         </a>
       </p>
 
@@ -419,8 +258,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 12:32" pubdate>
-              2021-03-26
+            <time datetime="2021-03-06 20:57" pubdate>
+              2021-03-06
             </time>
           </div>
         
@@ -428,11 +267,9 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/categories/Redis/">Redis</a>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E6%A8%A1%E6%8B%9F/">模拟</a>
+              <a href="/categories/Redis/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
             
           </div>
         
@@ -440,7 +277,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/">大数乘法</a>
+              <a href="/tags/Redis/">Redis</a>
             
           </div>
         
@@ -454,18 +291,23 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0042_%E6%8E%A5%E9%9B%A8%E6%B0%B4/">LC0042_接雨水</a>
+        <a href="/2021/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%B7%B3%E8%A1%A8/">跳表</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0042_%E6%8E%A5%E9%9B%A8%E6%B0%B4/">
+        <a href="/2021/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%B7%B3%E8%A1%A8/">
           
           
             
           
-          题目描述123456给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。示例 1：输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]输出：6
+          跳表简介
 
-方法1：单调栈123456789101112131415161718192021222324/*    维护一个单调递减的栈。若当前数 &gt; 栈顶元素, 并且栈中数量 &gt;= 2
+在有序链表的基础上添加跳跃功能减少不必要的搜索。
+搜索、删除、添加的时间复杂度为 O(N * logN)。
+跳表按层构造，高层相当于底层的’快速通道’
+
+
+代码实现12345678910111213141516171819202122232425262728public class SkipList&lt;K, V&gt; &#123;    // 定义链表节点Node    priv
         </a>
       </p>
 
@@ -473,8 +315,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 12:27" pubdate>
-              2021-03-26
+            <time datetime="2021-03-05 19:35" pubdate>
+              2021-03-05
             </time>
           </div>
         
@@ -482,11 +324,9 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E6%A0%88/">栈</a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%B7%B3%E8%A1%A8/">跳表</a>
             
           </div>
         
@@ -494,7 +334,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/">单调栈</a>
+              <a href="/tags/%E8%B7%B3%E8%A1%A8/">跳表</a>
             
           </div>
         
@@ -508,18 +348,16 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0041_%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0/">LC0041_缺失的第一个正整数</a>
+        <a href="/2021/03/05/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0041-0060/LC0041_%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0/">
+        <a href="/2021/03/05/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">
           
           
             
           
-          题目描述12345678给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。进阶：你可以实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案吗？示例 1：输入：nums = [1,2,0]输出：3
-
-方法1：原地哈希123456789101112131415161718192021222324252627/*    将 1 ~ n 范围内的数映射到下标 0 ~ n
+          
         </a>
       </p>
 
@@ -527,8 +365,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 12:05" pubdate>
-              2021-03-26
+            <time datetime="2021-03-05 10:59" pubdate>
+              2021-03-05
             </time>
           </div>
         
@@ -536,11 +374,9 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/categories/Acwing/">Acwing</a>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E6%A8%A1%E6%8B%9F/">模拟</a>
+              <a href="/categories/Acwing/%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/">前缀和与差分</a>
             
           </div>
         
@@ -548,7 +384,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%8E%9F%E5%9C%B0%E5%93%88%E5%B8%8C/">原地哈希</a>
+              <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/">前缀和</a>
+            
+              <a href="/tags/%E5%B7%AE%E5%88%86/">差分</a>
             
           </div>
         
@@ -562,16 +400,16 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0021-0040/LC0040_%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8Cii/">LC0040_组合总和ii</a>
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0021-0040/LC0040_%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8Cii/">
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E9%AB%98%E7%B2%BE%E5%BA%A6/">
           
           
             
           
-          方法1：回溯123456789101112131415161718192021222324252627282930313233343536373839/*    核心点：        (1) 只能选一次，下一层从i+1开始        (2) 去重。if (i &gt; index &amp;&amp; nums[i] == nums[i-1])    continue;*/List&lt;L
+          Acwing791_高精度加法1234567891011121314151617181920public String add(String a, String b) &#123;    // 将两个大数字符串翻转    a = new StringBuilder(a).reverse().toString();    b = new StringBuilder(b).reverse().toSt
         </a>
       </p>
 
@@ -579,8 +417,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 11:05" pubdate>
-              2021-03-26
+            <time datetime="2021-03-04 18:51" pubdate>
+              2021-03-04
             </time>
           </div>
         
@@ -588,11 +426,9 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/categories/Acwing/">Acwing</a>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%9B%9E%E6%BA%AF/">回溯</a>
+              <a href="/categories/Acwing/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a>
             
           </div>
         
@@ -600,9 +436,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%9B%9E%E6%BA%AF/">回溯</a>
-            
-              <a href="/tags/%E7%BB%84%E5%90%88/">组合</a>
+              <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a>
             
           </div>
         
@@ -616,16 +450,25 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0021-0040/LC0039_%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/">LC0039_组合总和</a>
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0021-0040/LC0039_%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/">
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%B3%95/">
           
           
             
           
-          题目描述12345678910111213141516给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。candidates 中的数字可以无限制重复被选取。说明：所有数字（包括 target）都是正整数。解集不能包含重复的组合。 示例 1：输入：candidates = [2,3,6,7], tar
+          二分法思想
+二分法常用于有序状态的数组中，通过中点值与条件的比较一下筛选掉一半的处理规模，从而使时间复杂度从O(N)降到O(logN)
+
+
+
+整数二分
+小数二分
+
+
+Acwing789_数的范围123456789101112131415161718192021222324252627282930313233343536373839/*    元素k的起始位置和终止位置，没找到则返回[-1, -1]
         </a>
       </p>
 
@@ -633,8 +476,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 10:58" pubdate>
-              2021-03-26
+            <time datetime="2021-03-04 18:35" pubdate>
+              2021-03-04
             </time>
           </div>
         
@@ -642,11 +485,9 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/categories/Acwing/">Acwing</a>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%9B%9E%E6%BA%AF/">回溯</a>
+              <a href="/categories/Acwing/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
             
           </div>
         
@@ -654,9 +495,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%9B%9E%E6%BA%AF/">回溯</a>
-            
-              <a href="/tags/%E7%BB%84%E5%90%88/">组合</a>
+              <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
             
           </div>
         
@@ -670,18 +509,24 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0021-0040/LC0038_%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/">LC0038_外观数列</a>
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">归并排序</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/26/%E7%AE%97%E6%B3%95/LeetCode0021-0040/LC0038_%E5%A4%96%E8%A7%82%E6%95%B0%E5%88%97/">
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
           
           
             
           
-          题目描述1234567891011给定一个正整数 n ，输出外观数列的第 n 项。「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：1.     12.     113.     214.     12115.     111221
+          归并排序的思想
+归并排序是基于 分治 和 递归 的思想。
 
-方法1：双指针1234567891011121314151617181920212223242526272829/*   
+选取数组中间点为分割点
+递归排序左子数组和右子数组
+归并两个有序的子数组
+
+
+Acwing787_归并排序模板123456789101112131415161718192021222324252627282930313233/*    时间复杂度: O(N * logN)    空间复杂度: O(N)*/public void merge
         </a>
       </p>
 
@@ -689,8 +534,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 10:47" pubdate>
-              2021-03-26
+            <time datetime="2021-03-04 17:50" pubdate>
+              2021-03-04
             </time>
           </div>
         
@@ -698,11 +543,9 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+              <a href="/categories/Acwing/">Acwing</a>
             
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+              <a href="/categories/Acwing/%E6%8E%92%E5%BA%8F/">排序</a>
             
           </div>
         
@@ -710,7 +553,65 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+              <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">归并排序</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/04/Acwing/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+          
+          
+            
+          
+          快排的思想
+快速排序是基于 分治 和 递归 的思想。
+
+选取分界点x。
+双指针处理，使得 &lt;= x 的都在左边， &gt;= x 的都在右边。
+递归排序左右子数组, 递归出口为子数组无元素或只有一个元素。
+
+
+Acwing785_快排模板123456789101112131415161718192021222324252627282930/*    时间复杂度: O(N ^ logN)   
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-04 16:23" pubdate>
+              2021-03-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Acwing/">Acwing</a>
+            
+              <a href="/categories/Acwing/%E6%8E%92%E5%BA%8F/">排序</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
             
           </div>
         
@@ -722,7 +623,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#board">9</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span>
     </span>
   </nav>
 
