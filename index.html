@@ -184,18 +184,20 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/31/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP/">状态压缩DP</a>
+        <a href="/2021/04/13/%E5%9B%BE%E8%AE%BA/%E6%A1%A5%E5%92%8C%E5%89%B2%E7%82%B9/">桥和割点</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/31/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9DP/">
+        <a href="/2021/04/13/%E5%9B%BE%E8%AE%BA/%E6%A1%A5%E5%92%8C%E5%89%B2%E7%82%B9/">
           
           
             
           
-          题目特点121、数据范围不会超过242、dp值虽然是一个整数，但是需要看成二进制，每一位的01表示不同的状态
+          
+对于无向图，如果删除了一条边导致整个图的连通分量数量发生了变化，则这条边称为桥
+对于无向图，如果删除了一个顶点导致整个图的连通分量数量发生了变化，则这个点称为割点。（一条桥对应的两个顶点）
 
-位运算123456789101112131415161718192021222324252627282930313233343536373839404142// 状态压缩DP中常用的位运算int A, B;   // 集合A、Blong C;     // 集合CA |= 1 &gt;&
+寻找桥12345678910111213141516171819202122232425262728293031323334353637383940/*    如何判断 v-w 是不是桥?    看通过w，
         </a>
       </p>
 
@@ -203,8 +205,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-31 18:14" pubdate>
-              2021-03-31
+            <time datetime="2021-04-13 12:12" pubdate>
+              2021-04-13
             </time>
           </div>
         
@@ -212,9 +214,240 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Acwing/">Acwing</a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
             
-              <a href="/categories/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+              <a href="/tags/%E6%A1%A5%E5%92%8C%E5%89%B2%E7%82%B9/">桥和割点</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/12/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">图的广度优先搜索</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/12/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
+          
+          
+            
+          
+          
+广度优先遍历使用队列， 将还未访问过的节点加入到队列中并标志已访问
+时间复杂度:O(V + E)
+广度优先搜索的应用：
+
+求一个点到另外一个点的最短路径（典型）
+
+
+BFS的伪代码1234567891011121314151617visited[0 ~ V-1] = false;void bfs(int v) &#123;    visited[v] = true;    queue.add(v
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-12 12:01" pubdate>
+              2021-04-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+              <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/11/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">图的深度优先搜索</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/11/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">
+          
+          
+            
+          
+          
+图的深度优先遍历需要维护：一个节点是否已经被访问过
+时间复杂度：O(V + E)
+深度优先遍历的应用：
+
+求连通分量
+两个点是否可达
+图中是否有环
+…
+
+
+DFS的伪代码1234567891011121314151617181920// 伪代码visited[0 ~ V - 1] = false;// 这样的话可以遍历多个连通分量的情况for (int v = 0; v &lt; V; v++)
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-11 23:22" pubdate>
+              2021-04-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">深度优先遍历</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/11/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A1%A8%E7%A4%BA/">图的基本表示</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/11/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A1%A8%E7%A4%BA/">
+          
+          
+            
+          
+          邻接矩阵12345678利用二维数组来表示两个节点的关系arr[i][j] = 3: 表示i--&gt;j, 权值为3适合稠密图: 顶点少，边很多空间复杂度:O(V ^ 2)建图：O(E)查看两个点是否相邻：O(1)求一个点的相邻节点：O(V)
+
+123456789101112131415161718192021222324252627282930// 邻接矩阵的定义public class Ad
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-11 22:22" pubdate>
+              2021-04-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8/">图的存储</a>
+            
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/10/%E7%AE%97%E6%B3%95/LC0010_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/">LC0010_正则表达式匹配</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/10/%E7%AE%97%E6%B3%95/LC0010_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/">
+          
+          
+            
+          
+          题目描述1234567891011给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &#x27;.&#x27; 和 &#x27;*&#x27; 的正则表达式匹配。&#x27;.&#x27; 匹配任意单个字符&#x27;*&#x27; 匹配零个或多个前面的那一个元素所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。示例 1：输入：s = &quot;aa&quot; p = &qu
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-10 19:52" pubdate>
+              2021-04-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
             
           </div>
         
@@ -236,19 +469,18 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/31/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1DP/">数位统计DP</a>
+        <a href="/2021/04/10/%E7%AE%97%E6%B3%95/LC0004_%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">LC0004_寻找两个正序数组的中位数</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/31/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E4%BD%8D%E7%BB%9F%E8%AE%A1DP/">
+        <a href="/2021/04/10/%E7%AE%97%E6%B3%95/LC0004_%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
           
           
             
           
-          计数问题题目描述1234567给定两个整数 a 和 b，求 a 和 b 之间的所有数字中 0∼9 的出现次数。例如，a=1024，b=1032，则 a 和 b 之间共有 9 个数如下：1024 1025 1026 1027 1028 1029 1030 1031 1032其中 0 出现 10 次，1 出现 10 次，2 出现 7 次，3 出现 3 次等等…
+          题目描述1234567给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。示例 1：输入：nums1 = [1,3], nums2 = [2]输出：2.00000解释：合并数组 = [1,2,3] ，中位数 2
 
-
-算法思路123数位DP最重要的一点：
+算法思路1234567891011121314方法1：O(N + M)    将两个正序数组按序合并，返回对应的
         </a>
       </p>
 
@@ -256,8 +488,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-31 17:46" pubdate>
-              2021-03-31
+            <time datetime="2021-04-10 18:31" pubdate>
+              2021-04-10
             </time>
           </div>
         
@@ -265,9 +497,113 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Acwing/">Acwing</a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
             
-              <a href="/categories/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E9%80%92%E5%BD%92/">递归</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%B8%AD%E4%BD%8D%E6%95%B0/">中位数</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/Trie%E6%A0%91/">Trie字典树</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/Trie%E6%A0%91/">
+          
+          
+            
+          
+          朴素版字典树：仅维护单词结尾信息12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061// 节点class Node &#123;    boolean isWord;    Node[] next;    public Nod
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-08 18:49" pubdate>
+              2021-04-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E5%85%B8%E6%A0%91/">字典树</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/">字典树</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/08/%E7%AE%97%E6%B3%95/%E8%82%A1%E7%A5%A8%E4%BA%A4%E6%98%93%E9%97%AE%E9%A2%98/">股票交易问题</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/08/%E7%AE%97%E6%B3%95/%E8%82%A1%E7%A5%A8%E4%BA%A4%E6%98%93%E9%97%AE%E9%A2%98/">
+          
+          
+            
+          
+          LeetCode121:买卖股票的最佳时机11234567891011121314151617181920/*    给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-08 16:10" pubdate>
+              2021-04-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/">LeetCode</a>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/LeetCode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
             
           </div>
         
@@ -289,70 +625,11 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E8%BE%93%E5%B1%82/TCP(%E9%87%8D%E8%A6%81)/">TCP</a>
+        <a href="/2021/04/07/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/">面试题之数据库</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E8%BE%93%E5%B1%82/TCP(%E9%87%8D%E8%A6%81)/">
-          
-          
-            
-          
-          
-
-
-
-
-什么叫可靠传输？1简单来说，一方给另外一方发送消息，只需要保证按序到达、无错误、不丢失、不重复即可认为是可靠传输。
-
-如何做到可靠传输?123456789先考虑最简单的情况：    为了保证按序到达：发送方发送一个消息就等待对方发送确认信息，确认收到后才发送下一个。因此TCP提供消息确认机制ACK。    为了保证无错误：提供检测错误的能力。比如TCP报文段有一个检验和机制，用来确认是否
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-27 14:42" pubdate>
-              2021-03-27
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E8%BE%93%E5%B1%82/">传输层</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/tags/TCP/">TCP</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/SMTP/"></a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/SMTP/">
+        <a href="/2021/04/07/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/">
           
           
             
@@ -365,278 +642,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 22:33" pubdate>
-              2021-03-26
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/FTP/">FTP</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/FTP/">
-          
-          
-            
-          
-          
-
-FTP是文件传输协议，使用TCP提供可靠传输，一个FTP服务器可以为多个客户进程提供服务。
-FTP使用两个并行的TCP连接，一个是控制连接(21端口), 一个数据连接(20端口)。
-
-
-工作原理12(1) 服务端监听21号端口，等待客户端的连接(2) 客户端发起连接请求后，启动数据连接处理客户端请求，处理完毕后，数据连接关闭。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 22:33" pubdate>
-              2021-03-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/">应用层</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/tags/FTP/">FTP</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/DHCP/">DHCP</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/DHCP/">
-          
-          
-            
-          
-          
-
-DHCP协议是：动态主机配置协议，用来动态的给加入网络的主机分配IP地址。
-DHCP客户端使用UDP协议，端口号68
-DHCP服务端使用TCP协议，端口号67
-
-
-DHCP的工作流程1234567(1) 一个新加入的主机，需要向DHCP服务器申请IP地址。由于刚开始它没有IP地址，因此它源IP地址全部设为0，目的IP地址全部设为1. 以广播的方式发送DHCPDISCOVER报文。(2) 凡是收
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-26 22:33" pubdate>
-              2021-03-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/">应用层</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/tags/DHCP/">DHCP</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/DNS/">DNS</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/DNS/">
-          
-          
-            
-          
-          
-
-DNS提供的服务：提供主机名到IP地址的解析功能。
-DNS协议运行于UDP协议之上，使用53号端口。
-
-
-DNS工作步骤12345678(1) 用户输入网址，浏览器首先检查是否有主机名到IP地址的映射缓存(2) 没有就检查本地host文件看是否有(3) 没有就询问本地DNS服务器(4) 本地DNS服务器没有的话，就会询问根DNS服务器(5) 根DNS服务器返回顶级域服务器地址，本地DNS服务器
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-25 18:40" pubdate>
-              2021-03-25
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/">应用层</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/tags/DNS/">DNS</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/HTTP(%E9%87%8D%E8%A6%81)/">HTTP</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/HTTP(%E9%87%8D%E8%A6%81)/">
-          
-          
-            
-          
-          基础知识点
-
-HTTP(超文本传输协议)是web应用所使用的协议
-HTTP使用TCP作为它的支撑运输的协议
-HTTP是无状态的协议
-
-
-非持续连接 vs 持续连接1234非持续连接：每一个请求/响应对都是经过单独的TCP连接。持续连接：所有的请求/响应对都是经过同一个TCP连接。比如：客户端向服务端发送一个HTTP请求，假设该请求页面包含1个HTML页面和10个JPEG图片，那么采用非持续连接就需
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-25 15:35" pubdate>
-              2021-03-25
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82/">应用层</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-            
-              <a href="/tags/HTTP/">HTTP</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/22/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">面试题之操作系统</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/22/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-          
-          
-            
-          
-          OSI七层模型？1234567物理层：通过媒介传输比特,确定机械及电气范围。(比特)数据链路层：将比特组装成帧和点到点的传递。(帧)网络层：负责数据包从源到宿的传递和网际互连。(包)传输层: 提供端到端的可靠报文传递和错误恢复。(段)会话层：建立、管理和终止会话。(会话协议数据单元)表示层：对数据进行翻译、加密和压缩。(表示协议数据单元)应用层: 允许方法OSI环境的手段。(应用协议数据单元)
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-22 22:33" pubdate>
-              2021-03-22
+            <time datetime="2021-04-07 15:46" pubdate>
+              2021-04-07
             </time>
           </div>
         
@@ -646,7 +653,7 @@ HTTP是无状态的协议
             
               <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
             
-              <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+              <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
             
           </div>
         
@@ -656,7 +663,7 @@ HTTP是无状态的协议
             
               <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
             
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
             
           </div>
         
@@ -670,16 +677,18 @@ HTTP是无状态的协议
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/22/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%A1%E6%95%B0DP/">计数DP</a>
+        <a href="/2021/04/06/%E7%AE%97%E6%B3%95/NC0092_%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/">NC0092_最长公共子序列</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/22/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%A1%E6%95%B0DP/">
+        <a href="/2021/04/06/%E7%AE%97%E6%B3%95/NC0092_%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/">
           
           
             
           
-          整数划分12345一个正整数 n 可以表示成若干个正整数之和，形如：n=n1+n2+…+nk，其中 n1≥n2≥…≥nk,k≥1。我们将这样的一种表示称为正整数 n 的一种划分。现在给定一个正整数 n，请你求出 n 共有多少种不同的划分方法。
+          题目描述12345给定两个字符串str1和str2，输出连个字符串的最长公共子序列。如过最长公共子序列为空，则输出-1。示例1输入:&quot;1A2C3D4B56&quot;,&quot;B1D23CA45B6A&quot;返回值:&quot;123456&quot;
+
+算法思路12345678910111213dp[i][j]: s1前i个字符和s2前j个字符的公共子序列的最长值集合划分：(包
         </a>
       </p>
 
@@ -687,8 +696,8 @@ HTTP是无状态的协议
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-22 18:34" pubdate>
-              2021-03-22
+            <time datetime="2021-04-06 18:09" pubdate>
+              2021-04-06
             </time>
           </div>
         
@@ -696,9 +705,11 @@ HTTP是无状态的协议
           <div class="post-meta mr-3">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Acwing/">Acwing</a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
             
-              <a href="/categories/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+              <a href="/categories/%E7%AE%97%E6%B3%95/%E7%89%9B%E5%AE%A2%E7%BD%91/">牛客网</a>
+            
+              <a href="/categories/%E7%AE%97%E6%B3%95/%E7%89%9B%E5%AE%A2%E7%BD%91/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
             
           </div>
         
@@ -707,6 +718,8 @@ HTTP是无状态的协议
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+            
+              <a href="/tags/%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/">公共子序列</a>
             
           </div>
         
@@ -718,7 +731,7 @@ HTTP是无状态的协议
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

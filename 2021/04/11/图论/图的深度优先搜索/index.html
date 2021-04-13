@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="">
+  
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>图的深度优先搜索 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="图的深度优先搜索">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-11 23:22" pubdate>
+        2021年4月11日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      722 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">图的深度优先搜索</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>图的深度优先遍历需要维护：一个节点是否已经被访问过</p>
+<p>时间复杂度：O(V + E)</p>
+<p>深度优先遍历的应用：</p>
+<ul>
+<li>求连通分量</li>
+<li>两个点是否可达</li>
+<li>图中是否有环</li>
+<li>…</li>
+</ul>
+</blockquote>
+<h3 id="DFS的伪代码"><a href="#DFS的伪代码" class="headerlink" title="DFS的伪代码"></a>DFS的伪代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 伪代码</span><br>visited[<span class="hljs-number">0</span> ~ V - <span class="hljs-number">1</span>] = <span class="hljs-keyword">false</span>;<br><span class="hljs-comment">// 这样的话可以遍历多个连通分量的情况</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt; V; v++) &#123;<br>    <span class="hljs-keyword">if</span> (!visited[v])<br>        dfs(v);<br>&#125;<br><br>dfs(<span class="hljs-keyword">int</span> v) &#123;<br>    <span class="hljs-comment">// 将该节点加入访问节点</span><br>    list.add(v)<br>    visited[v] = <span class="hljs-keyword">true</span>;<br><br>    <span class="hljs-comment">// 遍历与它相邻的所有节点</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> w : adj(v)) &#123;<br>        <span class="hljs-comment">// 需要判断该节点是否以已经被访问过</span><br>        <span class="hljs-keyword">if</span> (!visited[w])<br>            dfs(w);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="应用1：无向图的联通分量个数"><a href="#应用1：无向图的联通分量个数" class="headerlink" title="应用1：无向图的联通分量个数"></a>应用1：无向图的联通分量个数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java">visited[<span class="hljs-number">0</span> ~ V - <span class="hljs-number">1</span>] = <span class="hljs-keyword">false</span>;<br><span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt; V; v++) &#123;<br>    <span class="hljs-keyword">if</span> (!visited[v]) &#123;<br>        cnt++;      <span class="hljs-comment">// 每进入一次则连通分量+1</span><br>        dfs(v);<br>    &#125;<br>&#125;<br><br>dfs(<span class="hljs-keyword">int</span> v) &#123;<br>    visited[v] = <span class="hljs-keyword">true</span>;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> w : adj(v)) &#123;<br>        <span class="hljs-keyword">if</span> (!visited[w])<br>            dfs(w);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="应用2：每个连通分量的顶点个数"><a href="#应用2：每个连通分量的顶点个数" class="headerlink" title="应用2：每个连通分量的顶点个数"></a>应用2：每个连通分量的顶点个数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java">visited[<span class="hljs-number">0</span> ~ V - <span class="hljs-number">1</span>] = -<span class="hljs-number">1</span>; <br><span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt; V; v++) &#123;<br>    <span class="hljs-keyword">if</span> (visited[v] == -<span class="hljs-number">1</span>) &#123;<br>        dfs(v, cnt);<br>        cnt++;      <span class="hljs-comment">// 不仅维护有几个连通分量，而且可以赋给visited[]来记录顶点属于第几个连通分量</span><br>    &#125;<br>&#125;<br><br>dfs(<span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> cnt) &#123;<br>    visited[v] = cnt;       <span class="hljs-comment">// visited[]记录属于哪一个连通分量</span><br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> w : adj(v)) &#123;<br>        <span class="hljs-keyword">if</span> (visited[w] == -<span class="hljs-number">1</span>)<br>            dfs(w, cnt);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="应用3：判断两个顶点是否属于同一个联通分量"><a href="#应用3：判断两个顶点是否属于同一个联通分量" class="headerlink" title="应用3：判断两个顶点是否属于同一个联通分量"></a>应用3：判断两个顶点是否属于同一个联通分量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 在应用2的基础上，通过判断visited[]是否为同一个值即可判断</span><br><br><span class="hljs-keyword">if</span> (visited[s] == visited[p])   <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br><br><span class="hljs-comment">// 返回每个连通分量的所有情况</span><br>Map&lt;Integer, List&lt;Integer&gt;&gt; m = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++) &#123;<br>    <span class="hljs-keyword">int</span> t = visited[i];<br>    <span class="hljs-keyword">if</span> (!m.containsKey(t))<br>        m.put(t, <span class="hljs-keyword">new</span> ArrayList&lt;&gt;());<br>    m.get(t).add(i);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="应用4：如何求出两个顶点之间的任意一条路径"><a href="#应用4：如何求出两个顶点之间的任意一条路径" class="headerlink" title="应用4：如何求出两个顶点之间的任意一条路径"></a>应用4：如何求出两个顶点之间的任意一条路径</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 记录pre信息即可</span><br><span class="hljs-keyword">int</span>[] pre;<br><span class="hljs-keyword">boolean</span>[] visited;<br><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> parent, <span class="hljs-keyword">int</span> t)</span> </span>&#123;<br>    pre[v] = parent;<br>    visited[v] = <span class="hljs-keyword">true</span>;<br><br>    <span class="hljs-comment">// 提前返回</span><br>    <span class="hljs-keyword">if</span> (v == t) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> w : adg[v]) &#123;<br>        <span class="hljs-keyword">if</span> (!visited[w]) &#123;<br>            <span class="hljs-keyword">if</span> (dfs(w, v, t))<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>&#125;<br><br><span class="hljs-comment">// 倒序输出</span><br><span class="hljs-keyword">while</span> (p != s) &#123;<br>    list.add(p);<br>    p = parent[p];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="应用5：检测无向图中的环"><a href="#应用5：检测无向图中的环" class="headerlink" title="应用5：检测无向图中的环"></a>应用5：检测无向图中的环</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 找到一个已经访问过的节点，并且该节点不是上一个节点</span><br><span class="hljs-keyword">boolean</span> visited[];<br><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> parent)</span> </span>&#123;<br><br>    visited[v] = <span class="hljs-keyword">true</span>;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> w : adj[v]) &#123;<br>        <span class="hljs-keyword">if</span> (!visited[w])<br>            <span class="hljs-keyword">if</span> (dfs(w, v))  <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        <br>        <span class="hljs-keyword">if</span> (visited[w] &amp;&amp; parent != v)<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="应用6：二分图检测"><a href="#应用6：二分图检测" class="headerlink" title="应用6：二分图检测"></a>应用6：二分图检测</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 二分图：每一个顶点的相邻顶点与该顶点不属于同一类</span><br><br><span class="hljs-keyword">boolean</span>[] visited;<br><span class="hljs-keyword">int</span>[] colors;  <span class="hljs-comment">// -1: 未染色，0：蓝色，1：红色</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> color)</span> </span>&#123;<br>    colors[v] = color;<br>    visited[v] = <span class="hljs-keyword">true</span>;<br><br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">int</span> w : adj[v]) &#123;<br>        <span class="hljs-keyword">if</span> (!visited[w]) &#123;<br>            <span class="hljs-keyword">if</span> (!dfs(w, <span class="hljs-number">1</span> - color))<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 判断颜色是否冲突</span><br>            <span class="hljs-keyword">if</span> (colors[w] == colors[v])<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE%E8%AE%BA/">图论</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">深度优先遍历</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/12/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">图的广度优先搜索</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/11/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A1%A8%E7%A4%BA/">
+                        <span class="hidden-mobile">图的基本表示</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
