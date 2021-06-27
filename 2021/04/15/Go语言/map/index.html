@@ -20,7 +20,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>面试题之Java基础 - Hexo</title>
+  <title>map - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="面试题之Java基础">
+            <span class="h2" id="subtitle" title="map">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-19 22:22" pubdate>
-        2021年3月19日 晚上
+      <time datetime="2021-04-15 21:13" pubdate>
+        2021年4月15日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      424 字
+      651 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      7
        分钟
     </span>
   
@@ -227,22 +227,28 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">面试题之Java基础</h1>
+            <h1 style="display: none">map</h1>
             
             <div class="markdown-body">
-              <h3 id="StringBuilder-和-StringBuffer-的异同点"><a href="#StringBuilder-和-StringBuffer-的异同点" class="headerlink" title="StringBuilder 和 StringBuffer 的异同点"></a>StringBuilder 和 StringBuffer 的异同点</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">相同点：底层都是<span class="hljs-keyword">char</span>数组<br>不同点：前者是线程不安全的，后者是线程安全的(通过Synchronized修饰)<br></code></pre></td></tr></table></figure>
+              <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 字面量初始化</span><br>m := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span> &#123;<br>    <span class="hljs-string">&quot;apple&quot;</span> : <span class="hljs-number">2</span>,<br>    <span class="hljs-string">&quot;banana&quot;</span> : <span class="hljs-number">1</span>,<br>&#125;<br><br><span class="hljs-comment">// make()初始化</span><br>m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>, <span class="hljs-number">10</span>)<br><br><span class="hljs-comment">// 仅声明的map的值为nil：进行添加操作会触发panic</span><br><span class="hljs-keyword">var</span> m <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span><br><br><span class="hljs-comment">// map的增删改查</span><br><span class="hljs-keyword">map</span>[<span class="hljs-string">&quot;fruit&quot;</span>] = <span class="hljs-number">3</span><br><span class="hljs-keyword">map</span>[<span class="hljs-string">&quot;banana&quot;</span>] = <span class="hljs-number">4</span><br><span class="hljs-built_in">delete</span>(<span class="hljs-keyword">map</span>, <span class="hljs-string">&quot;fruit&quot;</span>)<br>v, exist := <span class="hljs-keyword">map</span>[<span class="hljs-string">&quot;apple&quot;</span>]    <span class="hljs-comment">// 如果不存在exist返回false, v为默认值</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="Java数组对象的内存分配"><a href="#Java数组对象的内存分配" class="headerlink" title="Java数组对象的内存分配"></a>Java数组对象的内存分配</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">基础类型的数组，分配在栈内存中，是连续分配的。<br><br>对象数组，对象引用连续分配在栈内存中。实际对象分配在堆内存，不是连续分配的<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><h4 id="map数据结构"><a href="#map数据结构" class="headerlink" title="map数据结构"></a>map数据结构</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> hmap <span class="hljs-keyword">struct</span> &#123;<br>    count       <span class="hljs-keyword">int</span>             <span class="hljs-comment">// 元素个数</span><br>    B           <span class="hljs-keyword">uint8</span>           <span class="hljs-comment">// bucket数组的大小</span><br>    buckets     unsafe.Pointer  <span class="hljs-comment">// bucket数组，长度为2^B</span><br>    oldbuckets  unsafe.Pointer  <span class="hljs-comment">// 旧的bucket数组，用于扩容</span><br>    ...<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="创建对象的方式有哪些？"><a href="#创建对象的方式有哪些？" class="headerlink" title="创建对象的方式有哪些？"></a>创建对象的方式有哪些？</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs scss">(<span class="hljs-number">1</span>) new<br>(<span class="hljs-number">2</span>) clone()<br>(<span class="hljs-number">3</span>) 反射<br>(<span class="hljs-number">4</span>) 序列化<br></code></pre></td></tr></table></figure>
+<h4 id="bucket数据结构"><a href="#bucket数据结构" class="headerlink" title="bucket数据结构"></a>bucket数据结构</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> bmap <span class="hljs-keyword">struct</span> &#123;<br>    tophash   [<span class="hljs-number">8</span>]<span class="hljs-keyword">uint8</span>        <span class="hljs-comment">// 存储Hash值的高8位， 将Hash值低位相同的键存放到当前的bucket时会将高8位存放到该数组</span><br>    data      []<span class="hljs-keyword">byte</span>          <span class="hljs-comment">// 存放key-value数据，方式是: key/key/....key/value/value/.../value. 节省字节对齐带来的空间浪费</span><br>    overflow  *bmap           <span class="hljs-comment">// 指向溢出的bucket的地址</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="深拷贝-和-浅拷贝"><a href="#深拷贝-和-浅拷贝" class="headerlink" title="深拷贝 和 浅拷贝"></a>深拷贝 和 浅拷贝</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">浅拷贝：在堆内存中，将该对象复制了一份，也就是说产生了一个新的对象。<br><span class="hljs-code">       新对象的属性如果是基本类型，拷贝的就是基本类型的值；</span><br><span class="hljs-code">       如果属性是引用类型，拷贝的就是内存地址。</span><br><span class="hljs-code"></span><br><span class="hljs-code">深拷贝：在堆内存中，将该对象复制了一份，也就是说产生了一个新的对象。</span><br><span class="hljs-code">       在拷贝引用类型成员变量时，为引用类型的数据成员另辟了一个独立的内存空间，实现真正内容上的拷贝。</span><br></code></pre></td></tr></table></figure>
+<h4 id="负载因子"><a href="#负载因子" class="headerlink" title="负载因子"></a>负载因子</h4><figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">负载因子 </span>=<span class="hljs-string"> 键数量 / bucket数量， 当负载因子 &gt; 6.5会触发扩容。</span><br><span class="hljs-string"></span><br><span class="hljs-string">负载因子太低：空间利用率低</span><br><span class="hljs-string">负载因子太高：冲突严重，存取效率低</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="和-equals-的区别"><a href="#和-equals-的区别" class="headerlink" title="== 和 equals 的区别"></a>== 和 equals 的区别</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section">== 用来比较栈中的值是否相等。对于基础类型直接比较值，对于引用类型比较地址值。</span><br><br>equals 用来比较堆中对象的内容是否相等。<br><br>Object类中的equals()用的是 ==, 因此如果不重写equals()的话，相当于使用 ==。<br></code></pre></td></tr></table></figure>
+<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs scss">触发扩容的条件：<br>    1、负载因子 &gt; 6<span class="hljs-selector-class">.5</span><br>    2、<span class="hljs-attribute">overflow</span>的数量 &gt; 2^15 (<span class="hljs-number">32768</span>)<br></code></pre></td></tr></table></figure>
 
-<h3 id="自动拆箱和自动装箱"><a href="#自动拆箱和自动装箱" class="headerlink" title="自动拆箱和自动装箱"></a>自动拆箱和自动装箱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">拆箱和装箱是指：基础类型和它们对应的包装类之间的转换。拆箱是把包装类型变成基本类型；装箱是把基本类型变成包装类型。<br></code></pre></td></tr></table></figure>
+<h4 id="增量扩容"><a href="#增量扩容" class="headerlink" title="增量扩容"></a>增量扩容</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">新建一个bucket数组，长度是原先的两倍，然后旧的bucket数组中的数据逐步搬迁到新的bucket数组中，每次访问<span class="hljs-built_in">map</span>都会搬迁两个键值对。<br></code></pre></td></tr></table></figure>
 
+<h4 id="等量扩容"><a href="#等量扩容" class="headerlink" title="等量扩容"></a>等量扩容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">bucket容量不变，重新做一遍搬迁工作，将松散的键值对重新排列一次，以使得bucket的使用率更高。这样是针对大量删除的极端场景。<br></code></pre></td></tr></table></figure>
 
+<h3 id="增删改查步骤"><a href="#增删改查步骤" class="headerlink" title="增删改查步骤"></a>增删改查步骤</h3><h4 id="查找过程"><a href="#查找过程" class="headerlink" title="查找过程"></a>查找过程</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-number">1</span>、根据<span class="hljs-variable">key</span>的值计算<span class="hljs-built_in">Hash</span>值<br><span class="hljs-number">2</span>、取<span class="hljs-built_in">Hash</span>值的低位在<span class="hljs-variable">hmap</span><span class="hljs-operator">.</span><span class="hljs-variable">B</span>中取模确定<span class="hljs-variable">bucket</span>的位置<br><span class="hljs-number">3</span>、取<span class="hljs-built_in">Hash</span>值的高位，在<span class="hljs-variable">tophash</span>数组中查询<br><span class="hljs-number">4</span>、如果<span class="hljs-variable">tophash</span><span class="hljs-punctuation">[</span><span class="hljs-variable">i</span><span class="hljs-punctuation">]</span>的值与当前<span class="hljs-variable">key</span>的<span class="hljs-built_in">Hash</span>值相等，则获取<span class="hljs-variable">tophash</span><span class="hljs-punctuation">[</span><span class="hljs-variable">i</span><span class="hljs-punctuation">]</span>的<span class="hljs-variable">key</span>值进行比较<br><span class="hljs-number">5</span>、当前<span class="hljs-variable">bucket</span>中没有找到，依次从<span class="hljs-variable">overflow</span>的<span class="hljs-variable">bucket</span>中查找<br><br>如果正处于搬迁工作，则优先从<span class="hljs-variable">oldbuckets</span>开始查找。没找到返回值类型的零值<br></code></pre></td></tr></table></figure>
+
+<h4 id="添加过程"><a href="#添加过程" class="headerlink" title="添加过程"></a>添加过程</h4><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-number">1</span>、根据<span class="hljs-built_in">key</span>的值计算Hash值<br><span class="hljs-number">2</span>、取Hash值的低位在hmap.B中取模确定bucket的位置<br><span class="hljs-number">3</span>、查找该<span class="hljs-built_in">key</span>是否存在，如果存在则更新值<br><span class="hljs-number">4</span>、如果不存在则在当前bucket中寻找空位插入<br><br>如果<span class="hljs-built_in">map</span>处于搬迁过程中，新元素会添加到新的bucket数组中。<br></code></pre></td></tr></table></figure>
+
+<h4 id="删除过程"><a href="#删除过程" class="headerlink" title="删除过程"></a>删除过程</h4><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">1</span>、查找该<span class="hljs-keyword">key</span>是否存在，存在则删除，不存在则什么也不做<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -251,9 +257,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/Java/">Java</a>
+                      <a class="hover-with-bg" href="/categories/Go%E8%AF%AD%E8%A8%80/">Go语言</a>
                     
                   </div>
                 
@@ -261,9 +265,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                      <a class="hover-with-bg" href="/tags/map/">map</a>
                     
                   </div>
                 
@@ -280,9 +282,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/20/Acwing/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                      <a href="/2021/04/16/Go%E8%AF%AD%E8%A8%80/select/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">背包问题</span>
+                        <span class="hidden-mobile">select</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -290,8 +292,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/03/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%A0%86/">
-                        <span class="hidden-mobile">堆</span>
+                      <a href="/2021/04/15/Go%E8%AF%AD%E8%A8%80/slice/">
+                        <span class="hidden-mobile">slice</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
